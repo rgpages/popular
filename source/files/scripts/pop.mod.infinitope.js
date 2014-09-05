@@ -12,7 +12,8 @@ POP.register(function() {
 	
 	$(function() {
 		
-		//var FQDN = 'http://registerguard.com/csp/cms/sites/rg/demos/home/page.csp?callback=?';
+		// JSON endpoint:
+		var FQDN = 'http://registerguard.com/csp/cms/sites/rg/demos/home/page.csp?callback=?';
 		
 		// Cache isotope DOM element:
 		var $isotope = $('#isotope')
@@ -55,8 +56,10 @@ POP.register(function() {
 			// Might as well insert this using JS as I don't want google indexing:
 			var $next = $('<a />', {
 				id: 'infscr-next',
-				href: 'http://registerguard.com/csp/cms/sites/rg/demos/home/page.csp?page=2',
+				// Use this for local testing:
 				//href: 'pages/page2.json',
+				// Can be JSONP endpoint:
+				href: 'http://registerguard.com/csp/cms/sites/rg/demos/home/page.csp?page=2',
 				text: 'Next page?'
 			});
 			
@@ -72,9 +75,9 @@ POP.register(function() {
 					
 					path: function(index) {
 						// Use this for local testing:
-						return 'pages/page' + index + '.json'; // https://github.com/paulirish/infinite-scroll/pull/171
+						//return 'pages/page' + index + '.json'; // https://github.com/paulirish/infinite-scroll/pull/171
 						// Can be JSONP API endpoint:
-						//return FQDN + '&page=' + index;
+						return FQDN + '&page=' + index;
 					},
 					navSelector: $next,
 					nextSelector: $next,
@@ -139,12 +142,12 @@ POP.register(function() {
 			
 			// Load page 1 content ...
 			// Use for local testing:
-			$.getJSON('pages/page1.json')
+			//$.getJSON('pages/page1.json')
 			// Can be JSONP API endpoint:
-			//$.getJSON(FQDN, {
-			//	page: 1,
-			//	format: 'json' // Pass whatever here.
-			//})
+			$.getJSON(FQDN, {
+				page: 1,
+				format: 'json' // Pass whatever here.
+			})
 				.done(function(json) {
 					
 					// Cache json elements:
