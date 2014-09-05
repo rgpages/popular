@@ -398,7 +398,8 @@ module.exports = function(grunt) {
 						expand : true,
 						cwd : './files/templates/',
 						src : [
-							'**/*.*', // Greedy!
+							'**/*.html',
+							'!includes/**/*',
 							'!latest.html',
 						],
 						dest : '../dev/',
