@@ -418,8 +418,7 @@ module.exports = function(grunt) {
 						expand : true,
 						cwd : './files/templates/',
 						src : [
-							'**/*.*', // IBID.
-							'!latest.html',
+							'index.html',
 						],
 						dest : '../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/',
 						
@@ -478,8 +477,6 @@ module.exports = function(grunt) {
 						cwd : './files/',
 						src : [
 							'images/**/*',
-							'pages/**/*',
-							'scripts/**/*',
 						],
 						dest : '../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/',
 						
