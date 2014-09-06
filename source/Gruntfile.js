@@ -484,7 +484,7 @@ module.exports = function(grunt) {
 					}, {
 						
 						// COPY INDEX TO ROOT:
-						src: '../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/',
+						src: '../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/index.html',
 						dest: '../index.html',
 						
 					},
