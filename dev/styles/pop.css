@@ -1567,7 +1567,7 @@ a, a:visited {
   }
 }
 
-header[role="banner"] {
+header#masthead {
   padding: 0 10px;
   border-bottom: 2px solid #ddd;
   margin-bottom: 20px;
