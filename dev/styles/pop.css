@@ -1523,27 +1523,27 @@ a {
   transition: color 250ms linear;
 }
 a, a:visited {
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 .no-touch a:visited:hover, a:focus, .no-touch a:focus:hover, .no-touch a:hover, a:active {
-  color: #f60;
+  color: #64c9ff;
 }
 
 ::-moz-selection {
-  background: rgba(255, 102, 0, 0.55);
+  background: rgba(255, 255, 255, 0.55);
   text-shadow: none;
 }
 
 ::selection {
-  background: rgba(255, 102, 0, 0.55);
+  background: rgba(255, 255, 255, 0.55);
   text-shadow: none;
 }
 
 #container {
   width: 1600px;
   min-width: 320px;
-  margin: 50px auto 250px;
+  margin: 30px auto 250px;
 }
 @media all and (max-width: 1599px) {
   #container {
@@ -1562,15 +1562,8 @@ a, a:visited {
 }
 @media all and (max-width: 639px) {
   #container {
-    margin-top: 10px;
     width: 320px;
   }
-}
-
-header#masthead {
-  padding: 0 10px;
-  border-bottom: 2px solid #ddd;
-  margin-bottom: 20px;
 }
 
 #isotope {
@@ -1584,13 +1577,64 @@ header#masthead {
   clear: both;
 }
 #isotope .isotope_item {
-  background: #ddd;
+  color: #ccc;
+  background-color: #222;
+  background-repeat: none;
+  background-position: center center;
+  background-size: 495px;
   width: 300px;
   height: 300px;
-  padding: 10px;
   margin: 10px;
   float: left;
   display: inline;
+  overflow: hidden;
+  cursor: pointer;
+  cursor: hand;
+}
+#isotope .isotope_item img {
+  display: none;
+}
+#isotope .isotope_item span {
+  color: #fc0;
+  font: 50px/25px "MillerHeadline Light", Cambria, Georgia, serif;
+  letter-spacing: .05em;
+  float: right;
+  margin: 0 0 20px 20px;
+}
+#isotope .isotope_item h6 {
+  font: normal 13px/15px Arial, sans-serif;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: #da2127;
+  margin-bottom: 20px;
+}
+#isotope .isotope_item div {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  -webkit-transition: background .2s ease-in-out;
+  -moz-transition: background .2s ease-in-out;
+  -ms-transition: background .2s ease-in-out;
+  -o-transition: background .2s ease-in-out;
+  transition: background .2s ease-in-out;
+}
+#isotope .isotope_item div:hover {
+  background: rgba(0, 0, 0, 0.75);
+}
+#isotope .isotope_item p {
+  font-size: 12px;
+  letter-spacing: .1em;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-variant: small-caps;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+#isotope .isotope_item *:active, #isotope .isotope_item *:focus {
+  outline: 0;
 }
 
 #isotope-loading {
@@ -1643,18 +1687,19 @@ header#masthead {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6,
 .sh1, .sh2, .sh3, .sh4, .sh5, .sh6 {
+  font-family: "MillerHeadline Bold", Cambria, Georgia, serif;
+  font-style: normal;
+  font-weight: bold;
   letter-spacing: .05em;
-  text-transform: uppercase;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
   margin: 0 0 25px;
   padding: 0;
 }
 
 .sh1, .sh2, .sh3, .sh4, .sh5, .sh6 {
+  font-family: "MillerHeadline Light", Cambria, Georgia, serif;
+  font-weight: normal;
   letter-spacing: .08em;
   text-transform: none;
-  font-weight: normal;
 }
 
 h1, .h1, .sh1 {
@@ -1688,7 +1733,7 @@ h6, .h6, .sh6 {
 }
 
 h1 + h1, h1 + h2, h1 + h3, h1 + h4, h1 + h5, h1 + h6, h2 + h1, h2 + h2, h2 + h3, h2 + h4, h2 + h5, h2 + h6, h3 + h1, h3 + h2, h3 + h3, h3 + h4, h3 + h5, h3 + h6, h4 + h1, h4 + h2, h4 + h3, h4 + h4, h4 + h5, h4 + h6, h5 + h1, h5 + h2, h5 + h3, h5 + h4, h5 + h5, h5 + h6, h6 + h1, h6 + h2, h6 + h3, h6 + h4, h6 + h5, h6 + h6 {
-  margin-top: -23px !important;
+  margin-top: -13px !important;
 }
 
 h1:empty {
@@ -1768,4 +1813,55 @@ audio {
 }
 .mm.tv {
   padding-bottom: 75%;
+}
+
+input[type="search"] {
+  font-size: 22px;
+  line-height: 1.5;
+  display: block;
+  width: 100%;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  display: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+input[type="search"]:focus {
+  outline: 0;
+  outline: thin dotted \9;
+  border-color: #129FEA;
+}
+
+/*FONTS*/
+@font-face {
+  font-family: "BentonSansCond Regular";
+  src: url("http://fonts.registerguard.com/benton/sanscondbold.eot");
+  src: url("http://fonts.registerguard.com/benton/sanscondbold.eot?#iefix") format("embedded-opentype"), url("http://fonts.registerguard.com/benton/sanscondbold.woff") format("woff"), url("http://fonts.registerguard.com/benton/sanscondbold.ttf") format("truetype"), url("http://fonts.registerguard.com/benton/sanscondbold.svg#web") format("svg");
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  font-family: "MillerHeadline Bold";
+  src: url("http://fonts.registerguard.com/miller/headlinebold.eot");
+  src: url("http://fonts.registerguard.com/miller/headlinebold.eot?#iefix") format("embedded-opentype"), url("http://fonts.registerguard.com/miller/headlinebold.woff") format("woff"), url("http://fonts.registerguard.com/miller/headlinebold.ttf") format("truetype"), url("http://fonts.registerguard.com/miller/headlinebold.svg#web") format("svg");
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  font-family: "MillerHeadline Light";
+  src: url("http://fonts.registerguard.com/miller/headlinelight.eot");
+  src: url("http://fonts.registerguard.com/miller/headlinelight.eot?#iefix") format("embedded-opentype"), url("http://fonts.registerguard.com/miller/headlinelight.woff") format("woff"), url("http://fonts.registerguard.com/miller/headlinelight.ttf") format("truetype"), url("http://fonts.registerguard.com/miller/headlinelight.svg#web") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "RGWeb";
+  src: url("http://fonts.registerguard.com/rg/rgweb.eot");
+  src: url("http://fonts.registerguard.com/rg/rgweb.eot?#iefix") format("embedded-opentype"), url("http://fonts.registerguard.com/rg/rgweb.woff") format("woff"), url("http://fonts.registerguard.com/rg/rgweb.ttf") format("truetype"), url("http://fonts.registerguard.com/rg/rgweb.svg#RGWeb") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }

@@ -36,7 +36,7 @@ a {
 	
 	&,
 	&:visited {
-		color: $raven;
+		color: $primary;
 		text-decoration: none;
 	}
 	
@@ -44,16 +44,16 @@ a {
 	&:focus,
 	.no-touch &:focus:hover,
 	.no-touch &:hover,
-	&:active { color: $juice; }
+	&:active { color: $secondary; }
 	
 }
 
 ::-moz-selection {
-	background: rgba($juice, .55);
+	background: rgba($primary, .55);
 	text-shadow: none;
 }
 
 ::selection {
-	background: rgba($juice, .55);
+	background: rgba($primary, .55);
 	text-shadow: none;
 }

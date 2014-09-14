@@ -1,11 +1,5 @@
-// Base:
-$milk: #fff;
-$juice: #f60;
-$bling: #ffd100;
-$goblin: #9ea301;
-$raven: #000;
-
 // Gray:
+$milk: #fff;
 $graye: #eee;
 $grayd: #ddd;
 $grayc: #ccc;
@@ -20,6 +14,11 @@ $gray4: #444;
 $gray3: #333;
 $gray2: #222;
 $gray1: #111;
+$raven: #000;
+
+// Base:
+$primary: $milk;
+$secondary: lighten(#0083ca, 30%);
 
 // Fonts:
 $sans: Arial, sans-serif;

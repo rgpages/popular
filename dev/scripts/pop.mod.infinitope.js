@@ -71,7 +71,18 @@ POP.register(function() {
 		var _render = function(data) {
 			
 			// Simple format, class name used for isotope functionality:
-			return '<div class="isotope_item"><p>' + data.count + '</p><p>' + data.headline + '</p></div>';
+			return [
+				'<div class="isotope_item"' + ((data.image) ? ' style="background-image:url(' + data.server + data.image.path + ')"' : '') + '>',
+					'<div>',
+						((data.image) ? '<img src="' + data.server + data.image.path + '">' : ''), // Hidden by CSS; used by `imagesLoaded()`.
+						'<span>' + data.count + '</span>',
+						((data.category) ? '<h6>' + data.category + '</h6>' : ''),
+						'<h3 class="h1"><a href="' + data.server + data.path + '" target="_blank">' + data.headline + '</a></h3>',
+						((data.deck) ? '<h4 class="sh4">' + data.deck + '</h4>' : ''),
+						((data.byline) ? '<p>By ' + data.byline + '</p>' : ''),
+					'</div>',
+				'</div>'
+			].join('\n');
 			
 		}; // _render
 		
@@ -185,21 +196,39 @@ POP.register(function() {
 					// Instantiate imagesloaded for ajaxed elements:
 					$newElements.imagesLoaded(function() {
 						
+						var $search = $('<input />', {
+							type: 'search',
+							placeholder: 'Search …'
+						})
+							.insertBefore($loading);
+						
 						// Fade out the initial loading div:
 						$loading.fadeOut('slow', function() {
-							
-							var $quicksearch;
 							
 							// Add new isotope elements to DOM:
 							$isotope
 								.append($newElements)
-								.isotope('appended', $newElements);
+								.isotope('appended', $newElements)
+								.on('click', '.isotope_item', function($e) {
+									
+									// Prevent child `<a>` from doing anything:
+									$e.preventDefault();
+									$e.stopPropagation();
+									
+									// Take them to the story:
+									window.location.href = $(this).find('a').first().attr('href');
+									
+								});
 							
-							// use value of search field to filter
-							$quicksearch = $('#quicksearch').keyup(debounce(function() {
-								qsRegex = new RegExp($quicksearch.val(), 'gi');
+							// http://codepen.io/desandro/pen/wfaGu
+							$search.keyup(debounce(function() {
+								
+								qsRegex = new RegExp($search.val(), 'gi');
+								
 								$isotope.isotope();
-							}, 200));
+								
+							}, 200))
+								.fadeIn('slow');
 							
 							_infinite(); // Setup infinitescroll.
 							
