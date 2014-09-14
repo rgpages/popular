@@ -3,6 +3,24 @@
 POP.register(function() {
 	
 	'use strict';
+
+	// debounce so filtering doesn't happen every millisecond
+	function debounce(fn, threshold) {
+		
+		var timeout;
+		
+		return function debounced() {
+			if (timeout) {
+				clearTimeout(timeout);
+			}
+			function delayed() {
+				fn();
+				timeout = null;
+			}
+			timeout = setTimeout(delayed, threshold || 100);
+		};
+		
+	}
 	
 	/**
 	 * @see http://paulirish.github.io/infinite-scroll/test/
@@ -13,7 +31,10 @@ POP.register(function() {
 	$(function() {
 		
 		// JSON endpoint:
-		var FQDN = 'http://registerguard.com/csp/cms/sites/rg/demos/home/page.csp?callback=?';
+		var FQDN = 'http://registerguard.com/csp/cms/sites/rg/demos/home/home.csp?callback=?';
+		
+		// Quick search regex:
+		var qsRegex;
 		
 		// Cache isotope DOM element:
 		var $isotope = $('#isotope')
@@ -21,7 +42,10 @@ POP.register(function() {
 			.isotope({ // http://isotope.metafizzy.co/
 				itemSelector:       '.isotope_item', // http://isotope.metafizzy.co/options.html#itemselector
 				transitionDuration: '.5s',           // http://isotope.metafizzy.co/options.html#transitionduration
-				layoutMode:         'fitRows'        // http://isotope.metafizzy.co/options.html#layoutmode
+				layoutMode:         'fitRows',       // http://isotope.metafizzy.co/options.html#layoutmode
+				filter: function() {
+					return qsRegex ? $(this).text().match( qsRegex ) : true;
+				}
 			});
 		
 		// Parse JSON data:
@@ -31,7 +55,7 @@ POP.register(function() {
 			var html = '';
 			
 			// Iterate over json results:
-			$.each(json.results, function(i, item) {
+			$.each(json.stories, function(i, item) {
 				
 				// Create string of HTML:
 				html += _render(item); // Just a string.
@@ -47,7 +71,7 @@ POP.register(function() {
 		var _render = function(data) {
 			
 			// Simple format, class name used for isotope functionality:
-			return '<div class="isotope_item"><p>' + data.title + '</p></div>';
+			return '<div class="isotope_item"><p>' + data.count + '</p><p>' + data.headline + '</p></div>';
 			
 		}; // _render
 		
@@ -148,8 +172,8 @@ POP.register(function() {
 			//$.getJSON('pages/page1.json')
 			// Can be JSONP API endpoint:
 			$.getJSON(FQDN, {
-				page: 1,
-				format: 'json' // Pass whatever here.
+				//format: 'json', // Pass whatever here.
+				page: 1
 			})
 				.done(function(json) {
 					
@@ -164,10 +188,18 @@ POP.register(function() {
 						// Fade out the initial loading div:
 						$loading.fadeOut('slow', function() {
 							
+							var $quicksearch;
+							
 							// Add new isotope elements to DOM:
 							$isotope
 								.append($newElements)
 								.isotope('appended', $newElements);
+							
+							// use value of search field to filter
+							$quicksearch = $('#quicksearch').keyup(debounce(function() {
+								qsRegex = new RegExp($quicksearch.val(), 'gi');
+								$isotope.isotope();
+							}, 200));
 							
 							_infinite(); // Setup infinitescroll.
 							
