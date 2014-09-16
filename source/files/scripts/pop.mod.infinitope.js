@@ -1,3 +1,4 @@
+/* global moment */
 /* jshint -W083, unused: vars */
 
 POP.register(function() {
@@ -31,7 +32,7 @@ POP.register(function() {
 	$(function() {
 		
 		// JSON endpoint:
-		var FQDN = 'http://registerguard.com/csp/cms/sites/rg/demos/home/home.csp?callback=?';
+		var API = 'http://registerguard.com/csp/cms/sites/rg/feeds/popular.csp?callback=?';
 		
 		// Quick search regex:
 		var qsRegex;
@@ -68,18 +69,19 @@ POP.register(function() {
 		}; // _parse()
 		
 		// Template for JSON response:
-		var _render = function(data) {
+		var _render = function(story) {
 			
 			// Simple format, class name used for isotope functionality:
 			return [
-				'<div class="isotope_item"' + ((data.image) ? ' style="background-image:url(' + data.server + data.image.path + ')"' : '') + '>',
+				'<div class="isotope_item"' + ((story.image) ? ' style="background-image:url(' + story.server + story.image.path + ')"' : '') + '>',
 					'<div>',
-						((data.image) ? '<img src="' + data.server + data.image.path + '">' : ''), // Hidden by CSS; used by `imagesLoaded()`.
-						'<span>' + data.count + '</span>',
-						((data.category) ? '<h6>' + data.category + '</h6>' : ''),
-						'<h3 class="h1"><a href="' + data.server + data.path + '" target="_blank">' + data.headline + '</a></h3>',
-						((data.deck) ? '<h4 class="sh4">' + data.deck + '</h4>' : ''),
-						((data.byline) ? '<p>By ' + data.byline + '</p>' : ''),
+						((story.image) ? '<img src="' + story.server + story.image.path + '">' : ''), // Hidden by CSS; used by `imagesLoaded()`.
+						'<span>' + story.count + '</span>',
+						((story.published) ? '<time>' + moment(story.published).twitterShort() + '</time>' : ''),
+						((story.category) ? '<h6>' + story.category + '</h6>' : ''),
+						'<h3 class="h1"><a href="' + story.server + story.path + '" target="_blank">' + story.headline + '</a></h3>',
+						((story.deck) ? '<h4 class="sh4">' + story.deck + '</h4>' : ''),
+						((story.byline) ? '<p>By ' + story.byline + '</p>' : ''),
 					'</div>',
 				'</div>'
 			].join('\n');
@@ -112,7 +114,7 @@ POP.register(function() {
 						// Use this for local testing:
 						//return 'pages/page' + index + '.json'; // https://github.com/paulirish/infinite-scroll/pull/171
 						// Can be JSONP API endpoint:
-						return FQDN + '&page=' + index;
+						return API + '&page=' + index;
 					},
 					navSelector: $next,
 					nextSelector: $next,
@@ -182,7 +184,7 @@ POP.register(function() {
 			// Use for local testing:
 			//$.getJSON('pages/page1.json')
 			// Can be JSONP API endpoint:
-			$.getJSON(FQDN, {
+			$.getJSON(API, {
 				//format: 'json', // Pass whatever here.
 				page: 1
 			})
