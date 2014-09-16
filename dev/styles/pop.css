@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2014 Micky Hulse.
  * @license Released under the Copyright © The Register-Guard 2014. All rights reserved..
  * @version 0.1.0
- * @date 2014/09/15
+ * @date 2014/09/16
  */
 
 
@@ -1592,17 +1592,30 @@ a, a:visited {
   cursor: pointer;
   cursor: hand;
 }
+#isotope .isotope_item h1, #isotope .isotope_item h2, #isotope .isotope_item h3, #isotope .isotope_item h4, #isotope .isotope_item h5, #isotope .isotope_item h6 {
+  font-family: "MillerHeadline Bold", Cambria, Georgia, serif;
+  font-style: normal;
+  font-weight: bold;
+}
+#isotope .isotope_item span,
+#isotope .isotope_item h4 {
+  font-family: "MillerHeadline Light", Cambria, Georgia, serif;
+  font-weight: normal;
+}
 #isotope .isotope_item span,
 #isotope .isotope_item h3,
 #isotope .isotope_item h4 {
   text-shadow: rgba(0, 0, 0, 0.9) 0 0 5px;
+}
+#isotope .isotope_item span {
+  font-size: 50px;
+  line-height: 25px;
 }
 #isotope .isotope_item img {
   display: none;
 }
 #isotope .isotope_item span {
   color: #fc0;
-  font: 50px/25px "MillerHeadline Light", Cambria, Georgia, serif;
   letter-spacing: .05em;
   float: right;
   margin: 0 0 20px 20px;
@@ -1614,9 +1627,6 @@ a, a:visited {
 }
 #isotope .isotope_item span + time {
   margin-top: -10px;
-}
-#isotope .isotope_item h1, #isotope .isotope_item h2, #isotope .isotope_item h3, #isotope .isotope_item h4, #isotope .isotope_item h5, #isotope .isotope_item h6 {
-  font-family: "MillerHeadline Bold", Cambria, Georgia, serif;
 }
 #isotope .isotope_item h6 {
   font: normal 13px/15px Arial, sans-serif;

@@ -28,16 +28,35 @@
 		cursor: pointer;
 		cursor: hand;
 		
+		// Base font settings for box:
+		h1, h2, h3, h4, h5, h6 {
+			font-family: "MillerHeadline Bold", $serif;
+			font-style: normal;
+			font-weight: bold;
+		}
+		
+		// Lighter fonts:
+		span,
+		h4 {
+			font-family: "MillerHeadline Light", $serif;
+			font-weight: normal;
+		}
+		
 		// Larger shadows for larger fonts:
 		span,
 		h3,
 		h4 { text-shadow: rgba($raven, .9) 0 0 5px; }
 		
+		// Number:
+		span {
+			font-size: 50px;
+			line-height: 25px
+		}
+		
 		img { display: none; }
 		
 		span {
 			color: #fc0;
-			font: 50px/25px "MillerHeadline Light", $serif;
 			letter-spacing: .05em;
 			float: right;
 			margin: 0 0 20px 20px;
@@ -50,8 +69,6 @@
 		}
 		
 		span + time { margin-top: -10px; }
-		
-		h1, h2, h3, h4, h5, h6 { font-family: "MillerHeadline Bold", $serif; }
 		
 		h6 {
 			font: normal 13px/15px $sans;
