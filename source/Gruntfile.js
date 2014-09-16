@@ -254,7 +254,8 @@ module.exports = function(grunt) {
 					
 					'../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/scripts/<%= pkg.name %>.min.js' : [
 						'./files/scripts/fastclick.js',
-						'./files/scripts/moment*.js',
+						'./files/scripts/moment.js',
+						'./files/scripts/moment-twitter.js',
 						'./files/scripts/jquery.js',
 						'./files/scripts/jquery.*.js',
 						'./files/scripts/imagesloaded.pkgd.js',
