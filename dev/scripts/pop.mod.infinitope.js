@@ -200,7 +200,7 @@ POP.register(function() {
 						
 						var $search = $('<input />', {
 							type: 'search',
-							placeholder: 'Search …'
+							placeholder: 'Filter by keyword …'
 						})
 							.insertBefore($loading);
 						
@@ -230,7 +230,8 @@ POP.register(function() {
 								$isotope.isotope();
 								
 							}, 200))
-								.fadeIn('slow');
+								.fadeIn('slow')
+								.css('display', 'block');
 							
 							_infinite(); // Setup infinitescroll.
 							

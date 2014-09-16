@@ -17,8 +17,8 @@ $gray1: #111;
 $raven: #000;
 
 // Base:
-$primary: $milk;
-$secondary: lighten(#0083ca, 30%);
+$primary: #0083ca;
+$secondary: lighten($primary, 30%);
 
 // Fonts:
 $sans: Arial, sans-serif;

@@ -24,9 +24,14 @@
 		float: left;
 		display: inline;
 		overflow: hidden;
-		text-shadow: rgba($raven, .75) 0 0 5px;
+		text-shadow: rgba($raven, .9) 0 0 1px;
 		cursor: pointer;
 		cursor: hand;
+		
+		// Larger shadows for larger fonts:
+		span,
+		h3,
+		h4 { text-shadow: rgba($raven, .9) 0 0 5px; }
 		
 		img { display: none; }
 		
@@ -42,12 +47,11 @@
 			float: right;
 			clear: right;
 			margin: 0 0 20px 20px;
-			text-shadow: rgba($raven, .75) 0 0 1px;
 		}
 		
 		span + time { margin-top: -10px; }
 		
-		h4 { text-shadow: rgba($raven, .75) 0 0 3px; }
+		h1, h2, h3, h4, h5, h6 { font-family: "MillerHeadline Bold", $serif; }
 		
 		h6 {
 			font: normal 13px/15px $sans;
@@ -55,7 +59,6 @@
 			text-transform: uppercase;
 			color: lighten(#ae1a1f, 10%);
 			margin-bottom: 20px;
-			text-shadow: rgba($raven, .75) 0 0 2px;
 		}
 		
 		div {
@@ -83,7 +86,6 @@
 			position: absolute;
 			bottom: 10px;
 			right: 10px;
-			text-shadow: rgba($raven, .75) 0 0 1px;
 		}
 		
 		* {

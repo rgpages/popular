@@ -1,7 +1,6 @@
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6,
 .sh1, .sh2, .sh3, .sh4, .sh5, .sh6 {
-	font-family: "MillerHeadline Bold", $serif;
 	font-style: normal;
 	font-weight: bold;
 	letter-spacing: .05em;
@@ -10,7 +9,6 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .sh1, .sh2, .sh3, .sh4, .sh5, .sh6 {
-	font-family: "MillerHeadline Light", $serif;
 	font-weight: normal;
 	letter-spacing: .08em;
 	text-transform: none;

@@ -1531,12 +1531,12 @@ a, a:visited {
 }
 
 ::-moz-selection {
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(0, 131, 202, 0.55);
   text-shadow: none;
 }
 
 ::selection {
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(0, 131, 202, 0.55);
   text-shadow: none;
 }
 
@@ -1588,9 +1588,14 @@ a, a:visited {
   float: left;
   display: inline;
   overflow: hidden;
-  text-shadow: rgba(0, 0, 0, 0.75) 0 0 5px;
+  text-shadow: rgba(0, 0, 0, 0.9) 0 0 1px;
   cursor: pointer;
   cursor: hand;
+}
+#isotope .isotope_item span,
+#isotope .isotope_item h3,
+#isotope .isotope_item h4 {
+  text-shadow: rgba(0, 0, 0, 0.9) 0 0 5px;
 }
 #isotope .isotope_item img {
   display: none;
@@ -1606,13 +1611,12 @@ a, a:visited {
   float: right;
   clear: right;
   margin: 0 0 20px 20px;
-  text-shadow: rgba(0, 0, 0, 0.75) 0 0 1px;
 }
 #isotope .isotope_item span + time {
   margin-top: -10px;
 }
-#isotope .isotope_item h4 {
-  text-shadow: rgba(0, 0, 0, 0.75) 0 0 3px;
+#isotope .isotope_item h1, #isotope .isotope_item h2, #isotope .isotope_item h3, #isotope .isotope_item h4, #isotope .isotope_item h5, #isotope .isotope_item h6 {
+  font-family: "MillerHeadline Bold", Cambria, Georgia, serif;
 }
 #isotope .isotope_item h6 {
   font: normal 13px/15px Arial, sans-serif;
@@ -1620,7 +1624,6 @@ a, a:visited {
   text-transform: uppercase;
   color: #da2127;
   margin-bottom: 20px;
-  text-shadow: rgba(0, 0, 0, 0.75) 0 0 2px;
 }
 #isotope .isotope_item div {
   padding: 20px;
@@ -1646,7 +1649,6 @@ a, a:visited {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  text-shadow: rgba(0, 0, 0, 0.75) 0 0 1px;
 }
 #isotope .isotope_item *:active, #isotope .isotope_item *:focus {
   outline: 0;
@@ -1702,7 +1704,6 @@ a, a:visited {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6,
 .sh1, .sh2, .sh3, .sh4, .sh5, .sh6 {
-  font-family: "MillerHeadline Bold", Cambria, Georgia, serif;
   font-style: normal;
   font-weight: bold;
   letter-spacing: .05em;
@@ -1711,7 +1712,6 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .sh1, .sh2, .sh3, .sh4, .sh5, .sh6 {
-  font-family: "MillerHeadline Light", Cambria, Georgia, serif;
   font-weight: normal;
   letter-spacing: .08em;
   text-transform: none;
@@ -1830,6 +1830,42 @@ audio {
   padding-bottom: 75%;
 }
 
+[class*="pure-g"] [class*="pure-u"] {
+  padding: 10px 0;
+}
+[class*="pure-g"] :first-child {
+  padding-top: 0;
+}
+[class*="pure-g"] :last-child {
+  padding-bottom: 0;
+}
+@media all and (min-width: 960px) {
+  [class*="pure-g"] [class*="pure-u"] {
+    padding: 0 20px;
+  }
+  [class*="pure-g"] :first-child {
+    padding-left: 0;
+  }
+  [class*="pure-g"] :last-child {
+    padding-right: 0;
+  }
+}
+
+#info {
+  margin: 0 0 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+#info h5 {
+  color: #333;
+  letter-spacing: .05em;
+  font-weight: normal;
+  margin: 0 0 5px;
+}
+#info p {
+  margin: 0;
+}
+
 input[type="search"] {
   font-size: 22px;
   line-height: 1.5;
@@ -1838,15 +1874,42 @@ input[type="search"] {
   border: 1px solid #ccc;
   box-shadow: inset 0 1px 3px #ddd;
   border-radius: 3px;
-  margin-bottom: 10px;
+  margin: 0 0 10px;
   padding: 10px 15px;
+  width: 100%;
   display: none;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  -webkit-transition: .3s linear border;
+  transition: .3s linear border;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+input[type="search"]::-webkit-input-placeholder {
+  color: #333;
+}
+input[type="search"]:-moz-placeholder {
+  color: #333;
+}
+input[type="search"]::-moz-placeholder {
+  color: #333;
+}
+input[type="search"]:-ms-input-placeholder {
+  color: #333;
+}
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-results-button, input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+input[type="search"]:focus, input[type="search"]:focus {
+  outline: 0;
 }
 input[type="search"]:focus {
-  outline: 0;
   outline: thin dotted \9;
   border-color: #129FEA;
 }
