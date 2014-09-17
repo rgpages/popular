@@ -485,6 +485,15 @@ module.exports = function(grunt) {
 						
 					}, {
 						
+						expand: true,
+						cwd: './files/',
+						src: [
+							'icons/*.{ico,png}',
+						],
+						dest:'../',
+						
+					}, {
+						
 						// COPY INDEX TO ROOT:
 						src: '../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/index.html',
 						dest: '../index.html',

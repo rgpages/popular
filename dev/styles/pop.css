@@ -1,6 +1,6 @@
 /**
  * Popular
- * The most popular stories on registerguard.com right, now!
+ * Top 100 stories in the last 24 hours
  *
  * @author Micky Hulse
  * @link http://mky.io
@@ -1608,10 +1608,6 @@ a, a:visited {
 #isotope .isotope_item h4 {
   text-shadow: rgba(0, 0, 0, 0.9) 0 0 5px;
 }
-#isotope .isotope_item span {
-  font-size: 50px;
-  line-height: 25px;
-}
 #isotope .isotope_item img {
   display: none;
 }
@@ -1621,6 +1617,8 @@ a, a:visited {
   clear: right;
 }
 #isotope .isotope_item span {
+  font-size: 50px;
+  line-height: 25px;
   color: #fc0;
   letter-spacing: .05em;
   margin: 0 0 20px 20px;

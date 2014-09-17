@@ -2,16 +2,38 @@
 <html class="no-touch no-js" lang="en" dir="ltr">
 <head>
 	
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="x-ua-compatible" content="chrome=1">
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
 	<meta name="google-site-verification" content="-b9kSGtOMT3DZyn5y1faDWWBN74GtyBDZlCDJuf39Yc">
 	<meta name="msvalidate.01" content="608AEB9B4D0BDA128921F2615DCC1FCE">
 	
 	<script>/*! https://gist.github.com/mhulse/4704893 */!function(e,n,o){("ontouchstart"in e||e.DocumentTouch&&n instanceof DocumentTouch||o.MaxTouchPoints>0||o.msMaxTouchPoints>0)&&(n.documentElement.className=n.documentElement.className.replace(/\bno-touch\b/,"touch")),n.documentElement.className=n.documentElement.className.replace(/\bno-js\b/,"js")}(window,document,navigator);</script>
 	
-	<title><!--@echo title--> | v<!--@echo version--> | <!--@echo NODE_ENV--></title>
+	<title><!--@echo title--></title>
+	<meta property="og:title" content="<!--@echo title-->">
+	
 	<meta name="description" content="<!--@echo description-->">
+	<meta property="og:description" content="<!--@echo description-->">
+	
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="The Register-Guard">
+	<meta name="handheldfriendly" content="true">
+	
+	<link rel="apple-touch-icon-precomposed" href="<!-- @echo production -->/apple-touch-icon-precomposed.png">
+	<meta property="og:image" content="<!-- @echo production -->/apple-touch-icon-precomposed.png">
+	<link rel="image_src" href="<!-- @echo production -->/apple-touch-icon-precomposed.png">
+	
+	<meta name="msapplication-tileimage" content="<!-- @echo production -->/apple-touch-icon-precomposed.png">
+	<meta name="msapplication-navbutton-color" content="#000">
+	<meta name="msapplication-tilecolor" content="#000">
+	<meta name="msapplication-tooltip" content="<!--@echo description-->">
+	<meta name="msapplication-starturl" content="<!-- @echo production -->/?pinned=true">
+	<meta name="msapplication-tap-highlight" content="no">
+	
+	<link rel="shortcut icon" href="<!-- @echo production -->/favicon.ico" type="image/x-icon">
 	
 	<!-- @if NODE_ENV == 'DEVELOPMENT' -->
 	
@@ -38,7 +60,7 @@
 	
 	<header id="zeppelin" role="banner">
 		<h6><a href="http://registerguard.com">The Register-Guard</a></h6>
-		<p>Top 100 stories in the last 24 hours</p>
+		<p><!--@echo description--></p>
 	</header>
 	
 	<div id="container">
