@@ -1,6 +1,8 @@
-# Popular
+# [Popular](http://pages.registerguard.com/popular/)
 
-**The most popular stories on registerguard.com right, now!**
+[![Popular](popular.gif)](http://pages.registerguard.com/popular/)
+
+**Top 100 stories in the last 24 hours**
 
 ## Links
 
