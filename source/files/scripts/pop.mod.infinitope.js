@@ -211,7 +211,8 @@ POP.register(function() {
 							.isotope('once', 'layoutComplete', function() {
 								
 								// Fade-in footer:
-								$('footer[role="contentinfo"]').fadeIn('slow'); // Because it looks weird when no elements are loaded.
+								$('footer[role="contentinfo"]') // Because it looks weird when no elements are loaded.
+									.fadeIn('slow');
 								
 							});
 						
@@ -233,7 +234,8 @@ POP.register(function() {
 								
 							}, 200));
 							
-							$aside.fadeIn('slow');
+							$aside
+								.fadeIn('slow');
 							
 							_infinite(); // Setup infinitescroll.
 							
