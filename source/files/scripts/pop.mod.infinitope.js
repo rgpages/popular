@@ -74,15 +74,15 @@ POP.register(function() {
 			// Simple format, class name used for isotope functionality:
 			return [
 				'<div class="isotope_item"' + ((story.image) ? ' style="background-image:url(' + story.server + story.image.path + ')"' : '') + '>',
-					'<div>',
+					'<a href="' + story.server + story.path + '" target="_blank">',
 						((story.image) ? '<img src="' + story.server + story.image.path + '">' : ''), // Hidden by CSS; used by `imagesLoaded()`.
 						'<span>' + story.count + '</span>',
 						((story.published) ? '<time>' + moment(story.published).twitterShort() + '</time>' : ''),
 						((story.category) ? '<h6>' + story.category + '</h6>' : ''),
-						'<h3 class="h1"><a href="' + story.server + story.path + '" target="_blank">' + story.headline + '</a></h3>',
+						'<h3 class="h1">' + story.headline + '</h3>',
 						((story.deck) ? '<h4 class="sh4">' + story.deck + '</h4>' : ''),
 						((story.byline) ? '<p>By ' + story.byline + '</p>' : ''),
-					'</div>',
+					'</a>',
 				'</div>'
 			].join('\n');
 			
@@ -210,17 +210,14 @@ POP.register(function() {
 							// Add new isotope elements to DOM:
 							$isotope
 								.append($newElements)
-								.isotope('appended', $newElements)
-								.on('click', '.isotope_item', function($e) {
-									
-									// Prevent child `<a>` from doing anything:
-									$e.preventDefault();
-									$e.stopPropagation();
-									
-									// Take them to the story:
-									window.location.href = $(this).find('a').first().attr('href');
-									
-								});
+								.isotope('appended', $newElements);
+								// .on('click', '.isotope_item', function($e) {
+								// 	// Prevent child `<a>` from doing anything:
+								// 	$e.preventDefault();
+								// 	$e.stopPropagation();
+								// 	// Take them to the story:
+								// 	window.location.href = $(this).find('a').first().attr('href');
+								// });
 							
 							// http://codepen.io/desandro/pen/wfaGu
 							$search.keyup(debounce(function() {

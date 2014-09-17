@@ -1491,6 +1491,13 @@ this the same font stack that Normalize.css sets for the `body`.
   max-width: none;
 }
 
+* {
+  -webkit-transition: color 250ms linear;
+  -moz-transition: color 250ms linear;
+  -ms-transition: color 250ms linear;
+  -o-transition: color 250ms linear;
+  transition: color 250ms linear;
+}
 *, *::before, *::after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1512,18 +1519,14 @@ body {
   font-size: 14px;
   line-height: 20px;
   font-family: Arial, sans-serif;
-  color: #999;
+  color: #888;
   background: #fff;
   min-height: 100%;
   text-rendering: optimizeLegibility;
 }
 
-a {
-  -webkit-transition: color 250ms linear;
-  transition: color 250ms linear;
-}
 a, a:visited {
-  color: #fff;
+  color: #0083ca;
   text-decoration: none;
 }
 .no-touch a:visited:hover, a:focus, .no-touch a:focus:hover, .no-touch a:hover, a:active {
@@ -1568,6 +1571,7 @@ a, a:visited {
 
 #isotope {
   *zoom: 1;
+  color: #ccc;
 }
 #isotope:before, #isotope:after {
   content: " ";
@@ -1577,20 +1581,16 @@ a, a:visited {
   clear: both;
 }
 #isotope .isotope_item {
-  color: #ccc;
-  background-color: #222;
+  background-color: #333;
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 495px;
+  background-size: cover;
   width: 300px;
   height: 300px;
-  margin: 10px;
-  float: left;
-  display: inline;
   overflow: hidden;
+  float: left;
+  margin: 10px;
   text-shadow: rgba(0, 0, 0, 0.9) 0 0 1px;
-  cursor: pointer;
-  cursor: hand;
 }
 #isotope .isotope_item h1, #isotope .isotope_item h2, #isotope .isotope_item h3, #isotope .isotope_item h4, #isotope .isotope_item h5, #isotope .isotope_item h6 {
   font-family: "MillerHeadline Bold", Cambria, Georgia, serif;
@@ -1600,6 +1600,7 @@ a, a:visited {
 #isotope .isotope_item span,
 #isotope .isotope_item h4 {
   font-family: "MillerHeadline Light", Cambria, Georgia, serif;
+  font-style: normal;
   font-weight: normal;
 }
 #isotope .isotope_item span,
@@ -1614,19 +1615,22 @@ a, a:visited {
 #isotope .isotope_item img {
   display: none;
 }
+#isotope .isotope_item time {
+  margin: 0 0 20px 20px;
+  float: right;
+  clear: right;
+}
 #isotope .isotope_item span {
   color: #fc0;
   letter-spacing: .05em;
-  float: right;
   margin: 0 0 20px 20px;
-}
-#isotope .isotope_item time {
   float: right;
-  clear: right;
-  margin: 0 0 20px 20px;
 }
 #isotope .isotope_item span + time {
   margin-top: -10px;
+}
+#isotope .isotope_item h3 {
+  color: #fff;
 }
 #isotope .isotope_item h6 {
   font: normal 13px/15px Arial, sans-serif;
@@ -1634,20 +1638,6 @@ a, a:visited {
   text-transform: uppercase;
   color: #da2127;
   margin-bottom: 20px;
-}
-#isotope .isotope_item div {
-  padding: 20px;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.25);
-  -webkit-transition: background .2s ease-in-out;
-  -moz-transition: background .2s ease-in-out;
-  -ms-transition: background .2s ease-in-out;
-  -o-transition: background .2s ease-in-out;
-  transition: background .2s ease-in-out;
-}
-#isotope .isotope_item div:hover {
-  background: rgba(0, 0, 0, 0.75);
 }
 #isotope .isotope_item p {
   font-size: 12px;
@@ -1659,6 +1649,29 @@ a, a:visited {
   position: absolute;
   bottom: 10px;
   right: 10px;
+}
+#isotope .isotope_item a {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: block;
+  -webkit-transition: background 250ms linear;
+  -moz-transition: background 250ms linear;
+  -ms-transition: background 250ms linear;
+  -o-transition: background 250ms linear;
+  transition: background 250ms linear;
+}
+#isotope .isotope_item a, #isotope .isotope_item a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+.no-touch #isotope .isotope_item a:visited:hover, #isotope .isotope_item a:focus, .no-touch #isotope .isotope_item a:focus:hover, .no-touch #isotope .isotope_item a:hover, #isotope .isotope_item a:active {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.75);
+}
+.no-touch #isotope .isotope_item a:visited:hover h3, #isotope .isotope_item a:focus h3, .no-touch #isotope .isotope_item a:focus:hover h3, .no-touch #isotope .isotope_item a:hover h3, #isotope .isotope_item a:active h3 {
+  color: #64c9ff;
 }
 #isotope .isotope_item *:active, #isotope .isotope_item *:focus {
   outline: 0;

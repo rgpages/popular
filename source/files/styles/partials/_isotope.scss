@@ -1,32 +1,41 @@
 #isotope {
 	
+	// Clear floated boxes:
 	*zoom: 1;
-	
 	&:before,
 	&:after {
 		content: " ";
 		display: table;
 	}
-	
 	&:after { clear: both; }
 	
+	// Default color for boxes:
+	color: $grayc;
+	
+	// Isotope box:
 	.isotope_item {
 		
-		color: $grayc;
-		//border: 2px solid $raven;
-		background-color: $gray2;
+		// Note: The `background-image` is applied via JS.
+		background-color: $gray3;
 		background-repeat: no-repeat;
 		background-position: center center;
-		background-size: 495px;
+		background-size: cover;
+		
+		// Box width/height, sized to fit responsive grids/breakpoints:
 		width: 300px;
 		height: 300px;
-		margin: 10px;
-		float: left;
-		display: inline;
+		
+		// Don't let anything overflow:
 		overflow: hidden;
+		
+		// Float:
+		float: left;
+		
+		// Space between boxes:
+		margin: 10px;
+		
+		// Base text shadow:
 		text-shadow: rgba($raven, .9) 0 0 1px;
-		cursor: pointer;
-		cursor: hand;
 		
 		// Base font settings for box:
 		h1, h2, h3, h4, h5, h6 {
@@ -39,6 +48,7 @@
 		span,
 		h4 {
 			font-family: "MillerHeadline Light", $serif;
+			font-style: normal;
 			font-weight: normal;
 		}
 		
@@ -53,46 +63,41 @@
 			line-height: 25px
 		}
 		
+		// Only needed for `imagesloaded.pkgd.js`:
 		img { display: none; }
 		
-		span {
-			color: #fc0;
-			letter-spacing: .05em;
-			float: right;
-			margin: 0 0 20px 20px;
-		}
-		
+		// Twitter-style timestamp:
 		time {
+			margin: 0 0 20px 20px;
 			float: right;
 			clear: right;
-			margin: 0 0 20px 20px;
 		}
 		
-		span + time { margin-top: -10px; }
+		// Popularity number:
+		span {
+			
+			color: $tertiary;
+			letter-spacing: .05em;
+			margin: 0 0 20px 20px;
+			float: right;
+			
+			+ time { margin-top: -10px; }
+			
+		}
 		
+		// Main headline:
+		h3 { color: $milk; }
+		
+		// Category:
 		h6 {
 			font: normal 13px/15px $sans;
 			letter-spacing: .15em;
 			text-transform: uppercase;
-			color: lighten(#ae1a1f, 10%);
+			color: lighten($secondary, 10%);
 			margin-bottom: 20px;
 		}
 		
-		div {
-			
-			padding: 20px;
-			width: 100%;
-			height: 100%;
-			background: rgba($raven, .25);
-			-webkit-transition: background .2s ease-in-out;
-			   -moz-transition: background .2s ease-in-out;
-			    -ms-transition: background .2s ease-in-out;
-			     -o-transition: background .2s ease-in-out;
-			        transition: background .2s ease-in-out;
-			&:hover { background: rgba($raven, .75); }
-			
-		}
-		
+		// Byline:
 		p {
 			font-size: 12px;
 			letter-spacing: .1em;
@@ -105,6 +110,49 @@
 			right: 10px;
 		}
 		
+		// Box link style:
+		a {
+			
+			background: rgba($raven, .25);
+			padding: 20px;
+			width: 100%;
+			height: 100%;
+			display: block;
+			// cursor: pointer;
+			// cursor: hand;
+			
+			// Background transition, same speed as global color animation:
+			-webkit-transition: background 250ms linear;
+			   -moz-transition: background 250ms linear;
+			    -ms-transition: background 250ms linear;
+			     -o-transition: background 250ms linear;
+			        transition: background 250ms linear;
+			
+			// Inherit color from `#isotope`:
+			&,
+			&:visited {
+				color: inherit;
+				text-decoration: none;
+			}
+			
+			// Hover styles:
+			.no-touch &:visited:hover,
+			&:focus,
+			.no-touch &:focus:hover,
+			.no-touch &:hover,
+			&:active {
+				
+				color: $milk;
+				background: rgba($raven, .75);
+				
+				// Make the headline pop:
+				h3 { color: lighten($primary, 30%); }
+				
+			}
+			
+		}
+		
+		// Kill any sort of outline:
 		* {
 			
 			&:active,

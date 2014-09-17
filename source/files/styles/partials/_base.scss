@@ -1,5 +1,12 @@
 * {
 	
+	// I want everything to `color` to animate:
+	-webkit-transition: color 250ms linear;
+	   -moz-transition: color 250ms linear;
+	    -ms-transition: color 250ms linear;
+	     -o-transition: color 250ms linear;
+	        transition: color 250ms linear;
+	
 	&,
 	&::before,
 	&::after {
@@ -23,7 +30,7 @@ body {
 	font-size: 14px;
 	line-height: 20px;
 	font-family: $sans;
-	color: $gray9;
+	color: $gray8;
 	background: $milk;
 	min-height: 100%;
 	text-rendering: optimizeLegibility;
@@ -31,12 +38,9 @@ body {
 
 a {
 	
-	-webkit-transition: color 250ms linear;
-	        transition: color 250ms linear;
-	
 	&,
 	&:visited {
-		color: $milk;
+		color: $primary;
 		text-decoration: none;
 	}
 	
@@ -44,7 +48,7 @@ a {
 	&:focus,
 	.no-touch &:focus:hover,
 	.no-touch &:hover,
-	&:active { color: $secondary; }
+	&:active { color: lighten($primary, 30%); }
 	
 }
 
