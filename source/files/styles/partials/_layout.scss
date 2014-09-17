@@ -17,7 +17,10 @@
 	}
 	
 	@media all and (max-width: 639px) { // IBID.
-		& { width: 320px; }
+		& {
+			width: 320px;
+			margin-top: 50px;
+		}
 	}
 	
 }
