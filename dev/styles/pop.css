@@ -1638,7 +1638,7 @@ a, a:visited {
   margin-bottom: 20px;
 }
 #isotope .isotope_item p {
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: .1em;
   margin: 0;
   padding: 0;
@@ -1851,6 +1851,49 @@ audio {
   padding-bottom: 75%;
 }
 
+footer[role="contentinfo"] {
+  margin: 10px 0 0;
+  text-align: center;
+}
+.js footer[role="contentinfo"] {
+  display: none;
+}
+footer[role="contentinfo"] p {
+  font: 11px/24px Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: #999;
+  margin: 0;
+  padding: 0;
+}
+footer[role="contentinfo"] span {
+  display: block;
+}
+footer[role="contentinfo"] span span {
+  display: none;
+}
+footer[role="contentinfo"] a {
+  color: #666;
+  text-decoration: none;
+}
+footer[role="contentinfo"] a:visited {
+  color: #666;
+}
+footer[role="contentinfo"] .no-touch a:visited:hover,
+footer[role="contentinfo"] a:focus,
+footer[role="contentinfo"] .no-touch a:focus:hover,
+footer[role="contentinfo"] .no-touch a:hover,
+footer[role="contentinfo"] a:active {
+  color: #000;
+  text-decoration: underline;
+}
+@media all and (min-width: 640px) {
+  footer[role="contentinfo"] span,
+  footer[role="contentinfo"] span span {
+    display: inline;
+  }
+}
+
 [class*="pure-g"] [class*="pure-u"] {
   padding: 10px 0;
 }
@@ -1872,18 +1915,21 @@ audio {
   }
 }
 
-#info {
+aside[role="complementary"] {
   margin: 0 0 20px;
-  padding: 10px 0;
+  padding: 10px;
   border-bottom: 1px solid #eee;
 }
-#info h5 {
+.js aside[role="complementary"] {
+  display: none;
+}
+aside[role="complementary"] h5 {
   color: #333;
   letter-spacing: .05em;
   font-weight: normal;
   margin: 0 0 5px;
 }
-#info p {
+aside[role="complementary"] p {
   margin: 0;
 }
 
@@ -1898,7 +1944,7 @@ input[type="search"] {
   margin: 0 0 10px;
   padding: 10px 15px;
   width: 100%;
-  display: none;
+  display: block;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;

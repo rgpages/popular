@@ -198,27 +198,32 @@ POP.register(function() {
 					// Instantiate imagesloaded for ajaxed elements:
 					$newElements.imagesLoaded(function() {
 						
+						var $aside = $('aside[role="complementary"]');
+						
 						var $search = $('<input />', {
 							type: 'search',
 							placeholder: 'Filter by keyword …'
 						})
-							.insertBefore($loading);
+							.appendTo($aside);
+						
+						// Setup a one-time event listener:
+						$isotope
+							.isotope('once', 'layoutComplete', function() {
+								
+								// Fade-in footer:
+								$('footer[role="contentinfo"]').fadeIn('slow'); // Because it looks weird when no elements are loaded.
+								
+							});
 						
 						// Fade out the initial loading div:
 						$loading.fadeOut('slow', function() {
 							
 							// Add new isotope elements to DOM:
+							
 							$isotope
 								.append($newElements)
 								.isotope('appended', $newElements);
-								// .on('click', '.isotope_item', function($e) {
-								// 	// Prevent child `<a>` from doing anything:
-								// 	$e.preventDefault();
-								// 	$e.stopPropagation();
-								// 	// Take them to the story:
-								// 	window.location.href = $(this).find('a').first().attr('href');
-								// });
-							
+								
 							// http://codepen.io/desandro/pen/wfaGu
 							$search.keyup(debounce(function() {
 								
@@ -226,9 +231,9 @@ POP.register(function() {
 								
 								$isotope.isotope();
 								
-							}, 200))
-								.fadeIn('slow')
-								.css('display', 'block');
+							}, 200));
+							
+							$aside.fadeIn('slow');
 							
 							_infinite(); // Setup infinitescroll.
 							

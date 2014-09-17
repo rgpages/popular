@@ -381,14 +381,15 @@ module.exports = function(grunt) {
 				
 				context : {
 					
-					title : '<%= pkg.title %>',
 					description : '<%= pkg.description %>',
-					name : '<%= pkg.name %>',
-					version : '<%= pkg.version %>',
 					homepage : '<%= pkg.homepage %>',
-					production : '<%= pkg.production %>',
+					license : '<%= _.pluck(pkg.licenses, "type").join(", ") %>',
+					name : '<%= pkg.name %>',
 					now : '<%= now %>',
+					production : '<%= pkg.production %>',
+					title : '<%= pkg.title %>',
 					ver : '<%= ver %>',
+					version : '<%= pkg.version %>',
 					
 				},
 				
