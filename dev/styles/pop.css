@@ -1622,7 +1622,7 @@ a, a:visited {
   line-height: 25px;
   color: #fc0;
   letter-spacing: .05em;
-  margin: 0 0 20px 20px;
+  margin: 0 -.05em 20px 20px;
   float: right;
 }
 #isotope .isotope_item span + time {

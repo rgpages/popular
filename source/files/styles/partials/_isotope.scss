@@ -74,7 +74,7 @@
 			line-height: 25px;
 			color: $tertiary;
 			letter-spacing: .05em;
-			margin: 0 0 20px 20px;
+			margin: 0 -.05em 20px 20px; // Pull to right to offset `letter-spacing` gap.
 			float: right;
 			
 			+ time { margin-top: -10px; }
