@@ -226,6 +226,9 @@ module.exports = function(grunt) {
 			prod : [
 				
 				'../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/**/*',
+				'apple-touch-icon-precomposed.png',
+				'favicon.ico',
+				'../index.html',
 				
 			],
 			
@@ -486,9 +489,11 @@ module.exports = function(grunt) {
 					}, {
 						
 						expand: true,
-						cwd: './files/',
+						cwd: './files/icons/',
 						src: [
-							'icons/*.{ico,png}',
+							//'*.{ico,png}',
+							'apple-touch-icon-precomposed.png',
+							'favicon.ico',
 						],
 						dest:'../',
 						
