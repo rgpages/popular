@@ -8,7 +8,7 @@ Development and technology notes.
 
 ```bash
 # First:
-$ cd infinitope/source/
+$ cd popular/source/
 
 # Next, install:
 $ npm install
