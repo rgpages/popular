@@ -229,7 +229,7 @@ module.exports = function(grunt) {
 				'apple-touch-icon-precomposed.png',
 				'favicon.ico',
 				'../index.html',
-				
+								
 			],
 			
 		},
@@ -266,11 +266,40 @@ module.exports = function(grunt) {
 						'./files/scripts/<%= pkg.name %>.js',
 						'./files/scripts/<%= pkg.name %>.mod.*.js',
 						'./files/scripts/<%= pkg.name %>.init.js',
+						'!./files/scripts/pop.mod.infinitope-single.js',
 					],
 					
 				},
 				
 			},
+			
+			single : {
+				
+				options : {
+					
+					banner : '<%= banner.short %>',
+					
+				},
+				
+				files : {
+					
+					'../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/scripts/<%= pkg.name %>-single.min.js' : [
+						'./files/scripts/fastclick.js',
+						'./files/scripts/moment.js',
+						'./files/scripts/moment-twitter.js',
+						'./files/scripts/jquery.js',
+						'./files/scripts/jquery.*.js',
+						'./files/scripts/imagesloaded.pkgd.js',
+						'./files/scripts/isotope.pkgd.js',
+						'./files/scripts/<%= pkg.name %>.js',
+						'./files/scripts/<%= pkg.name %>.mod.*.js',
+						'./files/scripts/<%= pkg.name %>.init.js',
+						'!./files/scripts/pop.mod.infinitope.js',
+					],
+					
+				},
+				
+			}
 			
 		},
 		
@@ -426,6 +455,7 @@ module.exports = function(grunt) {
 						cwd : './files/templates/',
 						src : [
 							'index.html',
+							'single.html',
 						],
 						dest : '../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/',
 						
@@ -504,6 +534,12 @@ module.exports = function(grunt) {
 						src: '../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/index.html',
 						dest: '../index.html',
 						
+					}, {
+						
+						// COPY single TO ROOT:
+						src: '../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/single.html',
+						dest: '../single.html',
+						
 					},
 					
 				],
@@ -555,7 +591,7 @@ module.exports = function(grunt) {
 	
 	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'pure_grids', 'sass:dev', 'preprocess:dev', 'copy:dev',]);
 	
-	grunt.registerTask('prod', ['init', 'dev', 'env:prod', 'clean:prod', 'pure_grids', 'sass:prod', 'uglify:prod', 'preprocess:prod', 'copy:prod',]);
+	grunt.registerTask('prod', ['init', 'dev', 'env:prod', 'clean:prod', 'pure_grids', 'sass:prod', 'uglify:prod', 'uglify:single', 'preprocess:prod', 'copy:prod',]);
 	
 	grunt.registerTask('default', ['dev',]);
 	
