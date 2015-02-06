@@ -32,7 +32,7 @@ POP.register(function() {
 	$(function() {
 		
 		// JSON endpoint:
-		var API = 'http://registerguard.com/csp/cms/sites/rg/feeds/popular.csp?per=1';
+		var API = 'http://registerguard.com/csp/cms/sites/rg/feeds/popular.csp?callback=?&per=1';
 		
 		// Quick search regex:
 		var qsRegex;
@@ -93,12 +93,12 @@ POP.register(function() {
 			
 			// Might as well insert this using JS as I don't want google indexing:
 			var $next = $('<a />', {
-				id: 'infscr-next',
+				id: 'infscr-next'
 				// Use this for local testing:
 				//href: 'pages/page2.json',
 				// Can be JSONP endpoint:
-				href: 'http://registerguard.com/csp/cms/sites/rg/demos/home/page.csp?page=2',
-				text: 'Next page?'
+				//href: 'http://registerguard.com/csp/cms/sites/rg/demos/home/page.csp?page=2',
+				//text: 'Next page?'
 			});
 			
 			// Setup infinitescroll:
