@@ -1329,7 +1329,7 @@
   color: #888;
   background: #fff;
   min-height: 100%;
-  text-rendering: optimizeLegibility;
+  /* text-rendering: optimizeLegibility;  This broke on small caps with Google Chrome update*/
 }
 #rg-home-popular a, #rg-home-popular a:visited {
   color: #0083ca;
