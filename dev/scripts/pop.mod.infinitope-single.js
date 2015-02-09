@@ -252,7 +252,7 @@ POP.register(function() {
 		$('<div />', { id: 'isotope-loading' }) // Let people know there's stuff coming.
 			.insertBefore($isotope) // Put it at the top.
 			.fadeIn('slow', _init); // Show it and start program.
-		
+			
 	});
 	
 }); // POP
