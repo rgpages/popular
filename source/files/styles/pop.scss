@@ -1,7 +1,7 @@
 // Namespace all styles
 // @see http://codepen.io/trey/blog/nesting-sass-includes
 // @see line 146 in dt/demos/rd.csp
-//#rg-home-popular {
+#rg-home-popular {
 	
 	// Helpers:
 	@import "partials/variables";
@@ -24,4 +24,8 @@
 
 	// To be sorted:
 	@import "partials/pending";
-//}
+}
+
+// Fonts
+// Don't namespace fonts because scss doesn't handle it well
+@import "partials/fonts";
