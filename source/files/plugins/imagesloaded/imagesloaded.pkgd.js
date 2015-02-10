@@ -600,8 +600,8 @@ function factory( window, EventEmitter, eventie ) {
 
 
 var $ = window.jQuery;
-//var console = window.console;
-//var hasConsole = typeof console !== 'undefined';
+var console = window.console;
+var hasConsole = typeof console !== 'undefined';
 
 // -------------------------- helpers -------------------------- //
 
@@ -729,9 +729,9 @@ function makeArray( obj ) {
     }
 
     function onConfirm( image, message ) {
-      //if ( _this.options.debug && hasConsole ) {
-        //console.log( 'confirm', image, message );
-      //}
+      if ( _this.options.debug && hasConsole ) {
+        console.log( 'confirm', image, message );
+      }
 
       _this.progress( image );
       checkedCount++;

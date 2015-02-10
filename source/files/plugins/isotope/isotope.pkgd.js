@@ -55,10 +55,10 @@ function addOptionMethod( PluginClass ) {
 
 // helper function for logging errors
 // $.error breaks jQuery chaining
-//var logError = typeof console === 'undefined' ? noop :
-  //function( message ) {
-    //console.error( message );
-  //};
+var logError = typeof console === 'undefined' ? noop :
+  function( message ) {
+    console.error( message );
+  };
 
 /**
  * jQuery plugin bridge, access methods like $elem.plugin('method')
@@ -860,10 +860,10 @@ function getStyleSize( value ) {
   return isValid && num;
 }
 
-//var logError = typeof console === 'undefined' ? noop :
-  //function( message ) {
-    //console.error( message );
-  //};
+var logError = typeof console === 'undefined' ? noop :
+  function( message ) {
+    console.error( message );
+  };
 
 // -------------------------- measurements -------------------------- //
 
@@ -1734,7 +1734,7 @@ if ( typeof define === 'function' && define.amd ) {
 // ----- vars ----- //
 
 var document = window.document;
-//var console = window.console;
+var console = window.console;
 var jQuery = window.jQuery;
 var noop = function() {};
 
@@ -1832,9 +1832,9 @@ function Outlayer( element, options ) {
 
   // bail out if not proper element
   if ( !element || !isElement( element ) ) {
-    //if ( console ) {
-      //console.error( 'Bad ' + this.constructor.namespace + ' element: ' + element );
-    //}
+    if ( console ) {
+      console.error( 'Bad ' + this.constructor.namespace + ' element: ' + element );
+    }
     return;
   }
 
@@ -2670,11 +2670,11 @@ Outlayer.create = function( namespace, options ) {
         options = attr && JSON.parse( attr );
       } catch ( error ) {
         // log error, do not initialize
-        //if ( console ) {
-          //console.error( 'Error parsing ' + dataAttr + ' on ' +
-            //elem.nodeName.toLowerCase() + ( elem.id ? '#' + elem.id : '' ) + ': ' +
-            //error );
-        //}
+        if ( console ) {
+          console.error( 'Error parsing ' + dataAttr + ' on ' +
+            elem.nodeName.toLowerCase() + ( elem.id ? '#' + elem.id : '' ) + ': ' +
+            error );
+        }
         continue;
       }
       // initialize

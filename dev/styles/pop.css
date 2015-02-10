@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * Popular
  * Top 100 stories in the last 24 hours
@@ -8,10 +9,44 @@
  * @copyright Copyright (c) 2015 Micky Hulse.
  * @license Released under the Copyright © The Register-Guard 2014. All rights reserved..
  * @version 0.1.0
- * @date 2015/02/09
+ * @date 2015/02/10
  */
-
-
+/**
+ * Popular
+ * Top 100 stories in the last 24 hours
+ *
+ * @author Micky Hulse
+ * @link http://mky.io
+ * @docs https://github.com/registerguard/popular
+ * @copyright Copyright (c) 2015 Micky Hulse.
+ * @license Released under the Copyright © The Register-Guard 2014. All rights reserved..
+ * @version 0.1.0
+ * @date 2015/02/10
+ */
+/**
+ * Popular
+ * Top 100 stories in the last 24 hours
+ *
+ * @author Micky Hulse
+ * @link http://mky.io
+ * @docs https://github.com/registerguard/popular
+ * @copyright Copyright (c) 2015 Micky Hulse.
+ * @license Released under the Copyright © The Register-Guard 2014. All rights reserved..
+ * @version 0.1.0
+ * @date 2015/02/10
+ */
+/**
+ * Popular
+ * Top 100 stories in the last 24 hours
+ *
+ * @author Micky Hulse
+ * @link http://mky.io
+ * @docs https://github.com/registerguard/popular
+ * @copyright Copyright (c) 2015 Micky Hulse.
+ * @license Released under the Copyright © The Register-Guard 2014. All rights reserved..
+ * @version 0.1.0
+ * @date 2015/02/10
+ */
 #rg-home-popular {
   /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
   /**
@@ -192,14 +227,16 @@
   */
   /*FONTS*/
 }
-#rg-home-popular body {
-  margin: 0;
+#rg-home-popular html {
   font-family: sans-serif;
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
   -webkit-text-size-adjust: 100%;
   /* 2 */
+}
+#rg-home-popular body {
+  margin: 0;
 }
 #rg-home-popular article,
 #rg-home-popular aside,

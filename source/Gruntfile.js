@@ -25,38 +25,6 @@ module.exports = function(grunt) {
 		
 		pkg : grunt.file.readJSON('package.json'),
 		
-		/*----------------------------------( BANNERS )----------------------------------*/
-		
-		/**
-		 * Short and long banners.
-		 *
-		 * @see http://gruntjs.com/getting-started#an-example-gruntfile
-		 */
-		
-		banner : {
-			
-			'short' : '/*! ' +
-			          '<%= pkg.title || pkg.name %>' +
-			          '<%= pkg.version ? " v" + pkg.version : "" %>' +
-			          '<%= pkg.licenses ? " | " + _.pluck(pkg.licenses, "type").join(", ") : "" %>' +
-			          '<%= pkg.homepage ? " | " + pkg.homepage : "" %>' +
-			          ' */',
-			
-			'long' : '/**\n' +
-			         ' * <%= pkg.title || pkg.name %>\n' +
-			         '<%= pkg.description ? " * " + pkg.description + "\\n" : "" %>' +
-			         ' *\n' +
-			         '<%= pkg.author.name ? " * @author " + pkg.author.name + "\\n" : "" %>' +
-			         '<%= pkg.author.url ? " * @link " + pkg.author.url + "\\n" : "" %>' +
-			         '<%= pkg.homepage ? " * @docs " + pkg.homepage + "\\n" : "" %>' +
-			         ' * @copyright Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>.\n' +
-			         '<%= pkg.licenses ? " * @license Released under the " + _.pluck(pkg.licenses, "type").join(", ") + ".\\n" : "" %>' +
-			         '<%= pkg.version ? " * @version " + pkg.version + "\\n" : "" %>' +
-			         ' * @date <%= grunt.template.today("yyyy/mm/dd") %>\n' +
-			         ' */\n\n',
-			
-		},
-		
 		/*----------------------------------( VERSIONING )----------------------------------*/
 		
 		/**
@@ -201,6 +169,76 @@ module.exports = function(grunt) {
 			
 		},
 		
+		/*----------------------------------( BANNERS )----------------------------------*/
+		
+		/**
+		 * Short and long banners.
+		 *
+		 * @see http://gruntjs.com/getting-started#an-example-gruntfile
+		 */
+		
+		banner : {
+			
+			'short' : '/*! ' +
+			          '<%= pkg.title || pkg.name %>' +
+			          '<%= pkg.version ? " v" + pkg.version : "" %>' +
+			          '<%= pkg.licenses ? " | " + _.pluck(pkg.licenses, "type").join(", ") : "" %>' +
+			          '<%= pkg.homepage ? " | " + pkg.homepage : "" %>' +
+			          ' */',
+			
+			'long' : '/**\n' +
+			         ' * <%= pkg.title || pkg.name %>\n' +
+			         '<%= pkg.description ? " * " + pkg.description + "\\n" : "" %>' +
+			         ' *\n' +
+			         '<%= pkg.author.name ? " * @author " + pkg.author.name + "\\n" : "" %>' +
+			         '<%= pkg.author.url ? " * @link " + pkg.author.url + "\\n" : "" %>' +
+			         '<%= pkg.homepage ? " * @docs " + pkg.homepage + "\\n" : "" %>' +
+			         ' * @copyright Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>.\n' +
+			         '<%= pkg.licenses ? " * @license Released under the " + _.pluck(pkg.licenses, "type").join(", ") + ".\\n" : "" %>' +
+			         '<%= pkg.version ? " * @version " + pkg.version + "\\n" : "" %>' +
+			         ' * @date <%= grunt.template.today("yyyy/mm/dd") %>\n' +
+			         ' */\n\n',
+			         
+		},
+			
+		usebanner: {
+			
+			dev: {
+				
+				options: {
+					
+					position: 'top',
+					banner: '<%= banner.long %>'
+					
+				},
+				
+				files: {
+				
+					src: [ './files/styles/<%= pkg.name %>.scss', './files/styles/development.scss', './files/scripts/<%= pkg.name %>.js', './files/scripts/<%= pkg.name %>.mod.*.js' ]
+			
+				}
+				
+			},
+			
+			prod: {
+				
+				options: {
+					
+					position: 'top',
+					banner: '<%= banner.short %>'
+				
+				},
+				
+				files: {
+				
+					src: [ '../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/styles/<%= pkg.name %>.min.css', '../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/scripts/<%= pkg.name %>-single.min.js', '../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/scripts/<%= pkg.name %>.min.js', '../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/scripts/<%= pkg.name %>-single.min.js' ]
+			
+				}
+			
+			},
+			
+		},
+		
 		/*----------------------------------( CLEAN )----------------------------------*/
 		
 		/**
@@ -249,7 +287,7 @@ module.exports = function(grunt) {
 				
 				options : {
 					
-					banner : '<%= banner.short %>',
+					//banner : '<%= banner.short %>',
 					
 				},
 				
@@ -277,7 +315,7 @@ module.exports = function(grunt) {
 				
 				options : {
 					
-					banner : '<%= banner.short %>',
+					//banner : '<%= banner.short %>',
 					
 				},
 				
@@ -361,7 +399,7 @@ module.exports = function(grunt) {
 				
 				options : {
 					
-					banner : '<%= banner.long %>',
+					//banner : 'hello',
 					style : 'expanded', // Output style. Can be nested, compact, compressed, expanded.
 					
 				},
@@ -379,7 +417,7 @@ module.exports = function(grunt) {
 				
 				options : {
 					
-					banner : '<%= banner.short %>',
+					//banner : '<%= banner.short %>',
 					style : 'compressed',
 					
 				},
@@ -566,7 +604,11 @@ module.exports = function(grunt) {
 	
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	
+	grunt.loadNpmTasks('grunt-banner');
+	
 	grunt.loadNpmTasks('grunt-env');
+	
+	grunt.loadNpmTasks('grunt-inline');
 	
 	grunt.loadNpmTasks('grunt-pure-grids');
 	
@@ -589,9 +631,9 @@ module.exports = function(grunt) {
 	
 	grunt.registerTask('plugins', ['bower', 'shell',]);
 	
-	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'pure_grids', 'sass:dev', 'preprocess:dev', 'copy:dev',]);
+	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'pure_grids', 'sass:dev', 'preprocess:dev', 'copy:dev', 'usebanner:dev',]);
 	
-	grunt.registerTask('prod', ['init', 'dev', 'env:prod', 'clean:prod', 'pure_grids', 'sass:prod', 'uglify:prod', 'uglify:single', 'preprocess:prod', 'copy:prod',]);
+	grunt.registerTask('prod', ['init', 'dev', 'env:prod', 'clean:prod', 'pure_grids', 'sass:prod', 'uglify:prod', 'uglify:single', 'preprocess:prod', 'copy:prod', 'usebanner:prod',]);
 	
 	grunt.registerTask('default', ['dev',]);
 	
