@@ -576,7 +576,7 @@ module.exports = function(grunt) {
 						
 						// COPY single TO ROOT:
 						src: '../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/single.html',
-						dest: '../single.html',
+						dest: '../single/index.html',
 						
 					},
 					
