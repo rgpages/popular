@@ -525,7 +525,7 @@ module.exports = function(grunt) {
 				
 				files: {
 					
-					'../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/test/single.html': '../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/single.html',
+					'../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/single.html': '../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/single.html',
 					
 				}
 				//src: ['../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/single.html'],
@@ -658,7 +658,7 @@ module.exports = function(grunt) {
 	
 	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'pure_grids', 'sass:dev', 'preprocess:dev', 'copy:dev',]);
 	
-	grunt.registerTask('prod', ['init', 'dev', 'env:prod', 'clean:prod', 'pure_grids', 'sass:prod', 'uglify:prod', 'uglify:single', 'preprocess:prod', 'copy:prod', 'staticinline:single', 'usebanner:prod',]);
+	grunt.registerTask('prod', ['init', 'dev', 'env:prod', 'clean:prod', 'pure_grids', 'sass:prod', 'uglify:prod', 'uglify:single', 'preprocess:prod', 'staticinline:single', 'copy:prod', 'usebanner:prod',]);
 	
 	grunt.registerTask('default', ['dev',]);
 	
