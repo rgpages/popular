@@ -22,13 +22,15 @@
 	
 	<!-- @if NODE_ENV == 'PRODUCTION' -->
 	
-	<link rel="stylesheet" href="<!-- @echo production -->/prod/<!-- @echo version -->/<!-- @echo now -->/<!-- @echo ver -->/styles/<!-- @echo name -->.min.css">
-	
+	<script>//<link rel="stylesheet" href="<!-- @echo production -->/prod/@echo version/@echo now/<!-- @echo ver -->/styles/<!-- @echo name -->.min.css"></script>
+	<link rel="stylesheet" href="../../../../prod/<!-- @echo version -->/<!-- @echo now -->/<!-- @echo ver -->/styles/<!-- @echo name -->.min.css" inline="true">
+
 	<!-- @endif -->
 	
 	<style>
 		body{
 			padding-top: 0;
+			margin: 0;
 		}
 		.isotope_item{
 			margin: 0!important;
@@ -54,8 +56,8 @@
 	<!-- @endif -->
 	
 	<!-- @if NODE_ENV == 'PRODUCTION' -->
-	<script>// src="./prod/<!-- @echo version -->/<!-- @echo now -->/<!-- @echo ver -->/scripts/<!-- @echo name -->-single.min.js"></script>
-	<script src="<!-- @echo production -->/prod/<!-- @echo version -->/<!-- @echo now -->/<!-- @echo ver -->/scripts/<!-- @echo name -->-single.min.js"></script>
+	<script src="../../../../prod/<!-- @echo version -->/<!-- @echo now -->/<!-- @echo ver -->/scripts/<!-- @echo name -->-single.min.js" inline="true"></script>
+	<script>// src="<!-- @echo production -->/prod/<!-- @echo version -->/<!-- @echo now -->/<!-- @echo ver -->/scripts/<!-- @echo name -->-single.min.js"></script>
 	<!-- @endif -->
 	
 </body>

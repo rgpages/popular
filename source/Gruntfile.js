@@ -510,6 +510,31 @@ module.exports = function(grunt) {
 			
 		},
 		
+		/*----------------------------------( STATIC INLINE )----------------------------------*/
+		
+		/**
+		 * Grunt task to pull css and js into html.
+		 *
+		 * @see https://github.com/dayvson/grunt-static-inline
+		 * 
+		 */
+		
+		staticinline : {
+			
+			single: {
+				
+				files: {
+					
+					'../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/test/single.html': '../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/single.html',
+					
+				}
+				//src: ['../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/single.html'],
+				//dest: ['../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/test/single.html']
+				
+			}
+			
+		},
+		
 		/*----------------------------------( COPY )----------------------------------*/
 		
 		/**
@@ -608,13 +633,13 @@ module.exports = function(grunt) {
 	
 	grunt.loadNpmTasks('grunt-env');
 	
-	grunt.loadNpmTasks('grunt-inline');
-	
 	grunt.loadNpmTasks('grunt-pure-grids');
 	
 	grunt.loadNpmTasks('grunt-preprocess');
 	
 	grunt.loadNpmTasks('grunt-shell');
+	
+	grunt.loadNpmTasks('grunt-static-inline');
 	
 	//----------------------------------
 	
@@ -631,9 +656,9 @@ module.exports = function(grunt) {
 	
 	grunt.registerTask('plugins', ['bower', 'shell',]);
 	
-	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'pure_grids', 'sass:dev', 'preprocess:dev', 'copy:dev', 'usebanner:dev',]);
+	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'pure_grids', 'sass:dev', 'preprocess:dev', 'copy:dev',]);
 	
-	grunt.registerTask('prod', ['init', 'dev', 'env:prod', 'clean:prod', 'pure_grids', 'sass:prod', 'uglify:prod', 'uglify:single', 'preprocess:prod', 'copy:prod', 'usebanner:prod',]);
+	grunt.registerTask('prod', ['init', 'dev', 'env:prod', 'clean:prod', 'pure_grids', 'sass:prod', 'uglify:prod', 'uglify:single', 'preprocess:prod', 'copy:prod', 'staticinline:single', 'usebanner:prod',]);
 	
 	grunt.registerTask('default', ['dev',]);
 	
