@@ -6258,10 +6258,7 @@ csslint regex-selectors:false, known-properties:false, duplicate-properties:fals
         var qsRegex, API = "http://registerguard.com/csp/cms/sites/rg/feeds/popular.csp?callback=?&per=1", $isotope = $("#isotope").isotope({
             itemSelector: ".isotope_item",
             transitionDuration: ".5s",
-            layoutMode: "fitRows",
-            filter: function() {
-                return qsRegex ? $(this).text().match(qsRegex) : !0;
-            }
+            layoutMode: "fitRows"
         }), _parse = function(json) {
             var html = "";
             return $.each(json.stories, function(i, item) {
