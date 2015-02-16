@@ -287,7 +287,8 @@ module.exports = function(grunt) {
 				
 				options : {
 					
-					//banner : '<%= banner.short %>',
+					mangle: false
+					//banner : '<%= banner.short %>', //moved to another plugin
 					
 				},
 				
