@@ -2,44 +2,26 @@
 <!-- @if NODE_ENV == 'DEVELOPMENT' -->
 <html id="rg-home-popular" class="no-touch no-js" lang="en" dir="ltr">
 <!-- @endif -->
-<head>
-	
-	<meta http-equiv="x-ua-compatible" content="chrome=1">
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	
-	<meta name="copyright" content="<!-- @echo license -->">
-	
-	<meta name="google-site-verification" content="-b9kSGtOMT3DZyn5y1faDWWBN74GtyBDZlCDJuf39Yc">
-	<meta name="msvalidate.01" content="608AEB9B4D0BDA128921F2615DCC1FCE">
-	
+<head>	
 	<!-- @if NODE_ENV == 'DEVELOPMENT' -->
-	
 	<link rel="stylesheet" href="./styles/<!-- @echo name -->.css">
 	<link rel="stylesheet" href="./styles/development.css">
-	
 	<!-- @endif -->
 	
 	<!-- @if NODE_ENV == 'PRODUCTION' -->
-	
 	<script>//<link rel="stylesheet" href="<!-- @echo production -->/prod/@echo version/@echo now/<!-- @echo ver -->/styles/<!-- @echo name -->.min.css"></script>
 	<link rel="stylesheet" href="../../../../prod/<!-- @echo version -->/<!-- @echo now -->/<!-- @echo ver -->/styles/<!-- @echo name -->.min.css" inline="true">
-
 	<!-- @endif -->
 	
 	<style>
-		body{
-			padding-top: 0;
-			margin: 0;
-		}
-		.isotope_item{
-			margin: 0!important;
-		}
+		body{padding-top:0;margin:0;}
+		#isotope{width:300px;height:300px;}
+		.isotope_item{margin:0!important;}
 	</style>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage">
-
-<div id="isotope"></div>
+	
+	<div id="isotope"></div>
 	
 	<!-- @if NODE_ENV == 'DEVELOPMENT' -->
 	<script src="./scripts/fastclick.js"></script>

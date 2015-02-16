@@ -656,7 +656,7 @@ module.exports = function(grunt) {
 	
 	grunt.registerTask('plugins', ['bower', 'shell',]);
 	
-	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'pure_grids', 'sass:dev', 'preprocess:dev', 'copy:dev',]);
+	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'pure_grids', 'sass:dev', 'preprocess:dev', 'copy:dev', 'usebanner:dev',]);
 	
 	grunt.registerTask('prod', ['init', 'dev', 'env:prod', 'clean:prod', 'pure_grids', 'sass:prod', 'uglify:prod', 'uglify:single', 'preprocess:prod', 'staticinline:single', 'copy:prod', 'usebanner:prod',]);
 	
