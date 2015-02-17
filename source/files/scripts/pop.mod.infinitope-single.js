@@ -1,3 +1,31 @@
+/**
+ * Popular
+ * Top 100 stories in the last 24 hours
+ *
+ * @author Micky Hulse
+ * @link http://mky.io
+ * @docs https://github.com/registerguard/popular
+ * @copyright Copyright (c) 2015 Micky Hulse.
+ * @license Released under the Copyright © The Register-Guard 2014. All rights reserved..
+ * @version 0.1.0
+ * @date 2015/02/16
+ */
+
+
+/**
+ * Popular
+ * Top 100 stories in the last 24 hours
+ *
+ * @author Micky Hulse
+ * @link http://mky.io
+ * @docs https://github.com/registerguard/popular
+ * @copyright Copyright (c) 2015 Micky Hulse.
+ * @license Released under the Copyright © The Register-Guard 2014. All rights reserved..
+ * @version 0.1.0
+ * @date 2015/02/16
+ */
+
+
 /* global moment */
 /* jshint -W083, unused: vars */
 
@@ -43,10 +71,10 @@ POP.register(function() {
 			.isotope({ // http://isotope.metafizzy.co/
 				itemSelector:       '.isotope_item', // http://isotope.metafizzy.co/options.html#itemselector
 				transitionDuration: '.5s',           // http://isotope.metafizzy.co/options.html#transitionduration
-				layoutMode:         'fitRows',       // http://isotope.metafizzy.co/options.html#layoutmode
-				filter: function() {
-					return qsRegex ? $(this).text().match( qsRegex ) : true;
-				}
+				layoutMode:         'fitRows'//,       // http://isotope.metafizzy.co/options.html#layoutmode
+				//filter: function() {
+					//return qsRegex ? $(this).text().match( qsRegex ) : true;
+				//}
 			});
 		
 		// Parse JSON data:
