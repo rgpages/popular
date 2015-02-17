@@ -8,4 +8,7 @@ $(function() {
 	
 	POP.init();
 	
+	jQuery.noConflict();
+	
 });
+
