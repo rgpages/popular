@@ -1554,6 +1554,9 @@
 #rg-home-popular h1:empty {
   display: none;
 }
+#rg-home-popular p {
+  font-family: Arial, Helvetica, sans-serif;
+}
 #rg-home-popular figure {
   margin: 25px 0;
   padding: 0;
