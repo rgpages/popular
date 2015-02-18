@@ -9,7 +9,7 @@
 	
 	<!-- @if NODE_ENV == 'PRODUCTION' -->
 	<script>//<link rel="stylesheet" href="<!-- @echo production -->/prod/@echo version/@echo now/<!-- @echo ver -->/styles/<!-- @echo name -->.min.css"></script>
-	<script>//<link rel="stylesheet" href="../../../../prod/<!-- @echo version -->/<!-- @echo now -->/<!-- @echo ver -->/styles/<!-- @echo name -->.min.css"></script>
+	<link rel="stylesheet" href="../../../../prod/<!-- @echo version -->/<!-- @echo now -->/<!-- @echo ver -->/styles/<!-- @echo name -->.min.css" inline="true">
 	<!-- @endif -->
 	
 	<style>
@@ -40,7 +40,7 @@
 	<!-- @endif -->
 	
 	<!-- @if NODE_ENV == 'PRODUCTION' -->
-	<script>// src="../../../../prod/<!-- @echo version -->/<!-- @echo now -->/<!-- @echo ver -->/scripts/<!-- @echo name -->-single.min.js"></script>
+	<script>// src="../../../../prod/<!-- @echo version -->/<!-- @echo now -->/<!-- @echo ver -->/scripts/<!-- @echo name -->-single.min.js" inline="true"></script>
 	<script>// src="<!-- @echo production -->/prod/<!-- @echo version -->/<!-- @echo now -->/<!-- @echo ver -->/scripts/<!-- @echo name -->-single.min.js"></script>
 	<!-- @endif -->
 	
