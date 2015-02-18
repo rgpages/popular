@@ -1,9 +1,8 @@
-<!doctype html>
 <!-- @if NODE_ENV == 'DEVELOPMENT' -->
+<!doctype html>
 <html id="rg-home-popular" class="no-touch no-js" lang="en" dir="ltr">
-<!-- @endif -->
 <head>	
-	<!-- @if NODE_ENV == 'DEVELOPMENT' -->
+
 	<link rel="stylesheet" href="./styles/<!-- @echo name -->.css">
 	<link rel="stylesheet" href="./styles/development.css">
 	<!-- @endif -->
@@ -18,9 +17,12 @@
 		.isotope_loading{background: url("<!-- @echo production -->/prod/<!-- @echo version -->/<!-- @echo now -->/<!-- @echo ver -->/images/loader1.gif") no-repeat center top;}
 		.isotope_item{margin:0!important;}
 	</style>
+
+<!-- @if NODE_ENV == 'DEVELOPMENT' -->
 </head>
 <body itemscope itemtype="http://schema.org/WebPage">
-	
+<!-- @endif -->
+
 	<div id="isotope"></div>
 	
 	<!-- @if NODE_ENV == 'DEVELOPMENT' -->
