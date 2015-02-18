@@ -283,20 +283,13 @@ module.exports = function(grunt) {
 		
 		uglify : {
 			
-			options : {
-				
-				mangle: false,
-				beautify: true
-				
-			},
-			
 			prod : {
 				
-				// options : {
+				options : {
 					
-				// 	//banner : '<%= banner.short %>', //moved to another plugin
+					//banner : '<%= banner.short %>', //moved to another plugin
 					
-				// },
+				},
 				
 				files : {
 					
@@ -320,12 +313,12 @@ module.exports = function(grunt) {
 			
 			single : {
 				
-				// options : {
+				options : {
 					
-				// 	mangle: false
-				// 	//banner : '<%= banner.short %>',
+					mangle: false
+					//banner : '<%= banner.short %>',
 					
-				// },
+				},
 				
 				files : {
 					

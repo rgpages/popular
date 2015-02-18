@@ -71,10 +71,10 @@ POP.register(function() {
 			.isotope({ // http://isotope.metafizzy.co/
 				itemSelector:       '.isotope_item', // http://isotope.metafizzy.co/options.html#itemselector
 				transitionDuration: '.5s',           // http://isotope.metafizzy.co/options.html#transitionduration
-				layoutMode:         'fitRows'//,       // http://isotope.metafizzy.co/options.html#layoutmode
-				//filter: function() {
-					//return qsRegex ? $(this).text().match( qsRegex ) : true;
-				//}
+				layoutMode:         'fitRows',       // http://isotope.metafizzy.co/options.html#layoutmode
+				filter: function() {
+					return qsRegex ? $(this).text().match( qsRegex ) : true;
+				}
 			});
 		
 		// Parse JSON data:
