@@ -59,3 +59,7 @@ h1:empty { display: none; }
 p{
 	font-family: Arial, Helvetica, sans-serif;
 }
+
+*{
+	-webkit-font-smoothing: auto;
+}
