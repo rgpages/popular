@@ -75,7 +75,7 @@ POP.register(function() {
 					// Cache json elements:
 					var $newElements = $(_parse(json));
 					
-					console.log($newElements);
+					//console.log($newElements);
 					
 					$('#isotope').append($newElements);
 					
