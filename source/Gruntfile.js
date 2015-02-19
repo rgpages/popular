@@ -36,7 +36,7 @@ module.exports = function(grunt) {
 		
 		now : grunt.template.today('yyyymmdd'), // Alternative: yyyymmddhhMMss
 		
-		ver : 4, // Increment if more than one build is needed in a single day.
+		ver : 5, // Increment if more than one build is needed in a single day.
 		
 		/*----------------------------------( BOWER )----------------------------------*/
 		
