@@ -36,7 +36,7 @@ module.exports = function(grunt) {
 		
 		now : grunt.template.today('yyyymmdd'), // Alternative: yyyymmddhhMMss
 		
-		ver : 3, // Increment if more than one build is needed in a single day.
+		ver : 4, // Increment if more than one build is needed in a single day.
 		
 		/*----------------------------------( BOWER )----------------------------------*/
 		
@@ -364,6 +364,7 @@ module.exports = function(grunt) {
 						'./files/scripts/<%= pkg.name %>.js',
 						'./files/scripts/<%= pkg.name %>.mod.*.js',
 						'./files/scripts/<%= pkg.name %>.init.js',
+						'!./files/scripts/pop.mod.infinitope.js',
 						'!./files/scripts/pop.mod.infinitope-single.js',
 					],
 					
