@@ -1560,6 +1560,7 @@
 }
 #rg-home-popular * {
   -webkit-font-smoothing: auto;
+  text-rendering: auto;
 }
 #rg-home-popular figure {
   margin: 25px 0;
