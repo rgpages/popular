@@ -315,7 +315,7 @@ module.exports = function(grunt) {
 				
 				options : {
 					
-					mangle: false
+					//mangle: false
 					//banner : '<%= banner.short %>',
 					
 				},
@@ -334,6 +334,36 @@ module.exports = function(grunt) {
 						'./files/scripts/<%= pkg.name %>.mod.*.js',
 						'./files/scripts/<%= pkg.name %>.init.js',
 						'!./files/scripts/pop.mod.infinitope.js',
+						'!./files/scripts/pop.mod.infinitope-single-simple.js',
+					],
+					
+				},
+				
+			},
+			
+			simple : {
+				
+				options : {
+					
+					//mangle: false
+					//banner : '<%= banner.short %>',
+					
+				},
+				
+				files : {
+					
+					'../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/scripts/<%= pkg.name %>-single-simple.min.js' : [
+						'./files/scripts/fastclick.js',
+						'./files/scripts/moment.js',
+						'./files/scripts/moment-twitter.js',
+						'./files/scripts/jquery.js',
+						'./files/scripts/jquery.*.js',
+						//'./files/scripts/imagesloaded.pkgd.js',
+						//'./files/scripts/isotope.pkgd.js',
+						'./files/scripts/<%= pkg.name %>.js',
+						'./files/scripts/<%= pkg.name %>.mod.*.js',
+						'./files/scripts/<%= pkg.name %>.init.js',
+						'!./files/scripts/pop.mod.infinitope-single.js',
 					],
 					
 				},
@@ -659,7 +689,7 @@ module.exports = function(grunt) {
 	
 	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'pure_grids', 'sass:dev', 'preprocess:dev', 'copy:dev',]);
 	
-	grunt.registerTask('prod', ['init', 'dev', 'env:prod', 'clean:prod', 'pure_grids', 'sass:prod', 'uglify:prod', 'uglify:single', 'preprocess:prod', 'staticinline:single', 'copy:prod', 'usebanner:prod',]);
+	grunt.registerTask('prod', ['init', 'dev', 'env:prod', 'clean:prod', 'pure_grids', 'sass:prod', 'uglify:prod', 'uglify:single', 'uglify:simple', 'preprocess:prod', 'staticinline:single', 'copy:prod', 'usebanner:prod',]);
 	
 	grunt.registerTask('default', ['dev',]);
 	
