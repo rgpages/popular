@@ -5,18 +5,14 @@
 
 	<link rel="stylesheet" href="./styles/<!-- @echo name -->.css">
 	<link rel="stylesheet" href="./styles/development.css">
-	<!-- @endif -->
 	
-	<!-- @if NODE_ENV == 'PRODUCTION' -->
+	
+	
 	<script>//<link rel="stylesheet" href="<!-- @echo production -->/prod/@echo version/@echo now/<!-- @echo ver -->/styles/<!-- @echo name -->.min.css"></script>
+	<!-- @endif -->
+	<!-- @if NODE_ENV == 'PRODUCTION' -->
 	<link rel="stylesheet" href="../../../../prod/<!-- @echo version -->/<!-- @echo now -->/<!-- @echo ver -->/styles/<!-- @echo name -->.min.css" inline="true">
 	<!-- @endif -->
-	
-	<style>
-		body{padding-top:0;margin:0;}
-		.isotope_loading{background: url("<!-- @echo production -->/prod/<!-- @echo version -->/<!-- @echo now -->/<!-- @echo ver -->/images/loader1.gif") no-repeat center top;}
-		.isotope_item{margin:0!important;}
-	</style>
 
 <!-- @if NODE_ENV == 'DEVELOPMENT' -->
 </head>
@@ -37,11 +33,12 @@
 	<script src="./scripts/<!-- @echo name -->.mod.fastclick.js"></script>
 	<script src="./scripts/<!-- @echo name -->.mod.infinitope-single.js"></script>
 	<script src="./scripts/<!-- @echo name -->.init.js"></script>
-	<!-- @endif -->
 	
+	
+	<script>// src="<!-- @echo production -->/prod/<!-- @echo version -->/<!-- @echo now -->/<!-- @echo ver -->/scripts/<!-- @echo name -->-single-simple.min.js" inline="true"></script>
+	<!-- @endif -->
 	<!-- @if NODE_ENV == 'PRODUCTION' -->
 	<script src="../../../../prod/<!-- @echo version -->/<!-- @echo now -->/<!-- @echo ver -->/scripts/<!-- @echo name -->-single-simple.min.js" inline="true"></script>
-	<script>// src="<!-- @echo production -->/prod/<!-- @echo version -->/<!-- @echo now -->/<!-- @echo ver -->/scripts/<!-- @echo name -->-single-simple.min.js" inline="true"></script>
 	<!-- @endif -->
 	
 <!-- @if NODE_ENV == 'DEVELOPMENT' -->
