@@ -312,36 +312,6 @@ module.exports = function(grunt) {
 				
 			},
 			
-			// single : {
-				
-			// 	options : {
-					
-			// 		//mangle: false
-			// 		//banner : '<%= banner.short %>',
-					
-			// 	},
-				
-			// 	files : {
-					
-			// 		'../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/scripts/<%= pkg.name %>-single.min.js' : [
-			// 			'./files/scripts/fastclick.js',
-			// 			'./files/scripts/moment.js',
-			// 			'./files/scripts/moment-twitter.js',
-			// 			'./files/scripts/jquery.js',
-			// 			'./files/scripts/jquery.*.js',
-			// 			'./files/scripts/imagesloaded.pkgd.js',
-			// 			'./files/scripts/isotope.pkgd.js',
-			// 			'./files/scripts/<%= pkg.name %>.js',
-			// 			'./files/scripts/<%= pkg.name %>.mod.*.js',
-			// 			'./files/scripts/<%= pkg.name %>.init.js',
-			// 			'!./files/scripts/pop.mod.infinitope.js',
-			// 			'!./files/scripts/pop.mod.infinitope-single-simple.js',
-			// 		],
-					
-			// 	},
-				
-			// },
-			
 			simple : {
 				
 				options : {

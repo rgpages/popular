@@ -3,7 +3,7 @@
 // @see line 146 in dt/demos/rd.csp
 #rg-home-popular {
 	
-	// import pop styles:
+	// import pop styles but have them namespaced and safe for external page:
 	@import "pop";
 	
 }

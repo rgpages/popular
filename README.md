@@ -10,6 +10,10 @@ An experimental **BETA** [alternative “homepage”](http://pages.registerguard
 
 Best viewed using recent operating systems and browsers.
 
+It also comes with a nifty single square if you want to put just the number one story in another page. See where this gets called from DT [here](https://github.com/registerguard/rg/tree/master/assets/includes/homepopular.csp) (private).
+
+This simplified single box comes with in-line minified CSS and JS so that the single file can be cached as needed. The CSS is all namespaced for use within #rg-home-popular which a surrounding div should have on the page you're embedding it. The JS is also simplified. Both of those need to be minded in the gruntfile.
+
 ## Links
 
 Frameworks/scripts/tools used:
