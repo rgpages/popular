@@ -305,6 +305,7 @@ module.exports = function(grunt) {
 						'./files/scripts/<%= pkg.name %>.mod.*.js',
 						'./files/scripts/<%= pkg.name %>.init.js',
 						'!./files/scripts/pop.mod.infinitope-single.js',
+						'!./files/scripts/pop.mod.infinitope-single-simple.js',
 					],
 					
 				},
