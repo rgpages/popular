@@ -36,7 +36,7 @@ module.exports = function(grunt) {
 		
 		now : grunt.template.today('yyyymmdd'), // Alternative: yyyymmddhhMMss
 		
-		ver : 2, // Increment if more than one build is needed in a single day.
+		ver : 3, // Increment if more than one build is needed in a single day.
 		
 		/*----------------------------------( BOWER )----------------------------------*/
 		
@@ -463,6 +463,23 @@ module.exports = function(grunt) {
 				
 			},
 			
+			single : {
+				
+				options : {
+					
+					//banner : '<%= banner.short %>',
+					style : 'compressed',
+					
+				},
+				
+				files : {
+					
+					'../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/styles/<%= pkg.name %>-single.min.css' : './files/styles/<%= pkg.name %>-single.scss',
+					
+				},
+				
+			},
+			
 		},
 		
 		/*----------------------------------( PREPROCESS )----------------------------------*/
@@ -691,7 +708,7 @@ module.exports = function(grunt) {
 	
 	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'pure_grids', 'sass:dev', 'preprocess:dev', 'copy:dev',]);
 	
-	grunt.registerTask('prod', ['init', 'dev', 'env:prod', 'clean:prod', 'pure_grids', 'sass:prod', 'uglify:prod', 'uglify:single', 'uglify:simple', 'preprocess:prod', 'staticinline:single', 'copy:prod', 'usebanner:prod',]);
+	grunt.registerTask('prod', ['init', 'dev', 'env:prod', 'clean:prod', 'pure_grids', 'sass:prod', 'sass:single', 'uglify:prod', 'uglify:single', 'uglify:simple', 'preprocess:prod', 'staticinline:single', 'copy:prod', 'usebanner:prod',]);
 	
 	grunt.registerTask('default', ['dev',]);
 	
