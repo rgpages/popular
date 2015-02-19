@@ -74,7 +74,7 @@ POP.register(function() {
 			// Simple format, class name used for isotope functionality:
 			return [
 				'<div class="isotope_item"' + ((story.image) ? ' style="background-image:url(' + story.server + story.image.path + ')"' : '') + '>',
-					'<a href="' + story.server + story.path + '" target="_blank">',
+					'<a href="' + story.server + story.path + '?pop=pop" target="_blank">',
 						((story.image) ? '<img src="' + story.server + story.image.path + '">' : ''), // Hidden by CSS; used by `imagesLoaded()`.
 						'<span>' + story.count + '</span>',
 						((story.published) ? '<time>' + moment(story.published).twitterShort() + '</time>' : ''),
