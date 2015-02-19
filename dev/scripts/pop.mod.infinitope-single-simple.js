@@ -1,7 +1,8 @@
 /* global moment */
 /* jshint -W083, unused: vars */
 
-// Simplified version of pop.mod.infinitope.js
+// Simplified version of pop.mod.infinitope.js for a single box
+// Probably still overcomplicated but that's ok for now
 
 POP.register(function() {
 	

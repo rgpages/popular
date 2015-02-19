@@ -254,4 +254,7 @@ POP.register(function() {
 		
 	});
 	
+	var copyyear = new Date().getFullYear();
+	$('#copyyear').replaceWith('Copyright The Register-Guard © 1996–' + copyyear + ' ');
+	
 }); // POP
