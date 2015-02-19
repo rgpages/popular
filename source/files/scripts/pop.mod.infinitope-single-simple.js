@@ -1,6 +1,8 @@
 /* global moment */
 /* jshint -W083, unused: vars */
 
+// Simplified version of pop.mod.infinitope.js
+
 POP.register(function() {
 	
 	'use strict';
